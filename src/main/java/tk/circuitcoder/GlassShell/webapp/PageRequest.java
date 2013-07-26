@@ -10,7 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Generate requested page
+ *
+ * Servlet used to deal with page GET request
+ * This Servlet is called when page requests come (all requests that fits pattern "/page/*")<br/>
+ * It will check if the requested page is exist/resisted(PageDB) and available for the specific user(UserDB and GroupDB)<br/>
+ * Then it will forward requests to the selected page, base on the user's permissions and the current server status.
+ * @see tk.circuitcoder.GlassShell.server.ServerContainer
  * @author circuitcoder
  *
  */
@@ -18,6 +23,9 @@ import javax.servlet.http.HttpServletResponse;
 public class PageRequest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	/**
+	 * The GET method.. still a "HelloWorld" now
+	 */
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		try {
